@@ -7,8 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.DatePicker;
 import android.view.View;
 import android.widget.Toast;
@@ -34,7 +37,6 @@ public class RegisterScreen extends AppCompatActivity {
     private RequestQueue queue;
     private Calendar calendar;
     private DatePickerDialog.OnDateSetListener dateSetListener;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +86,60 @@ public class RegisterScreen extends AppCompatActivity {
                 sendPostRequest();
             }
         });
+
+        // Configurar cambio de foco con Enter
+        setupEditorActions();
+    }
+
+    // Método para configurar los cambios de foco con Enter
+    private void setupEditorActions() {
+        editTextName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_NEXT ||
+                        (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                    editTextEmail.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        editTextEmail.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_NEXT ||
+                        (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                    editTextPassword.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        editTextPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_NEXT ||
+                        (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                    editTextBirthday.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        editTextBirthday.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE ||
+                        (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                    buttonRegister.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     // Método para mostrar el selector de fecha
@@ -112,7 +168,7 @@ public class RegisterScreen extends AppCompatActivity {
             requestBody.put("name", editTextName.getText().toString());
             requestBody.put("mail", editTextEmail.getText().toString());
             requestBody.put("password", editTextPassword.getText().toString());
-            requestBody.put("birthday", editTextBirthday.getText().toString());
+            requestBody.put("birthdate", editTextBirthday.getText().toString());
         } catch (JSONException e) {
             Toast.makeText(context, "Error al construir la solicitud JSON", Toast.LENGTH_LONG).show();
             Log.e("RegisterScreen", "Error al construir la solicitud JSON", e);
@@ -124,7 +180,7 @@ public class RegisterScreen extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                Server.name + "/v1/users",
+                Server.name + "/v1/users/",
                 requestBody,
                 new Response.Listener<JSONObject>() {
                     @Override

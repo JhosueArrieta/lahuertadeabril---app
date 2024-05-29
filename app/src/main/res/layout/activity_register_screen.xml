@@ -28,7 +28,8 @@
         app:layout_constraintTop_toBottomOf="@id/registerTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/greenwater"/>
 
     <EditText
         android:id="@+id/name"
@@ -37,6 +38,7 @@
         android:hint="Nombre"
         android:textColorHint="@color/black"
         android:layout_marginTop="140dp"
+        android:imeOptions="actionNext"
         app:layout_constraintWidth_percent="0.6"
         app:layout_constraintTop_toBottomOf="@id/registerTitle"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,6 +50,7 @@
         android:layout_height="wrap_content"
         android:hint="Correo electrónico"
         android:textColorHint="@color/black"
+        android:imeOptions="actionNext"
         app:layout_constraintWidth_percent="0.6"
         app:layout_constraintTop_toBottomOf="@id/name"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,6 +63,7 @@
         android:hint="Contraseña"
         android:textColorHint="@color/black"
         android:inputType="textPassword"
+        android:imeOptions="actionNext"
         app:layout_constraintWidth_percent="0.6"
         app:layout_constraintTop_toBottomOf="@id/email"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +75,8 @@
         android:layout_height="wrap_content"
         android:hint="Fecha de Nacimiento"
         android:textColorHint="@color/black"
-        android:inputType="none"
+        android:inputType="date"
+        android:imeOptions="actionDone"
         android:clickable="true"
         app:layout_constraintWidth_percent="0.6"
         app:layout_constraintTop_toBottomOf="@id/password"
