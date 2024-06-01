@@ -13,16 +13,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lahuertadeabril"
-        tools:targetApi="31"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".ChangePasswordScreen"
+            android:exported="false" />
+        <activity
+            android:name=".SearchScreen"
+            android:exported="false" />
+        <activity
+            android:name=".FavouritesScreen"
+            android:exported="false" />
+        <activity
+            android:name=".AccountScreen"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" />
         <activity
             android:name=".RegisterScreen"
             android:exported="false" />
         <activity
             android:name=".LoginScreen"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainScreen"
