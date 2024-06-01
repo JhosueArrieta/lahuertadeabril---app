@@ -41,6 +41,7 @@ public class LoginScreen extends AppCompatActivity {
 
         // Ocultamos la actionBar
         getSupportActionBar().hide();
+
         // Inicializar variables
         queue = Volley.newRequestQueue(this);
         editTextEmail = findViewById(R.id.email);
@@ -69,16 +70,21 @@ public class LoginScreen extends AppCompatActivity {
         });
     }
 
-    // Endpoint de inicio de sesión
     private void loginUser() {
+        // Desactivar el botón para evitar múltiples pulsaciones
+        loginButton.setEnabled(false);
+
         JSONObject requestBody = new JSONObject();
         try {
             requestBody.put("email", editTextEmail.getText().toString());
             requestBody.put("password", editTextPassword.getText().toString());
         } catch (JSONException e) {
             Toast.makeText(context, "Error al construir el JSON", Toast.LENGTH_SHORT).show();
+            loginButton.setEnabled(true);
+            return;
         }
         progressBar.setVisibility(View.VISIBLE);
+
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
                 Server.name + "/v1/sessions/",
@@ -93,12 +99,15 @@ public class LoginScreen extends AppCompatActivity {
                         } catch (JSONException e) {
                             throw new RuntimeException(e);
                         }
+
                         SharedPreferences preferences = context.getSharedPreferences("SESSIONS_APP_PREFS", MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putString("VALID_USERNAME", editTextEmail.getText().toString());
                         editor.putString("VALID_TOKEN", receivedToken);
-                        editor.commit();
-                        startActivity(new Intent(LoginScreen.this, MainActivity.class));
+                        editor.apply();
+
+                        loginButton.setEnabled(true);
+                        startActivity(new Intent(LoginScreen.this, AccountScreen.class));
                         finish();
                     }
                 },
@@ -106,9 +115,10 @@ public class LoginScreen extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         progressBar.setVisibility(View.INVISIBLE);
-                        int serverCodeError = error.networkResponse.statusCode;
-                        String errorMessage = new String(error.networkResponse.data);
+                        int serverCodeError = error.networkResponse != null ? error.networkResponse.statusCode : -1;
+                        String errorMessage = error.networkResponse != null ? new String(error.networkResponse.data) : "Unknown error";
                         Toast.makeText(context, "Código de respuesta: " + serverCodeError + "\nMensaje: " + errorMessage, Toast.LENGTH_LONG).show();
+                        loginButton.setEnabled(true);
                     }
                 }
         );
