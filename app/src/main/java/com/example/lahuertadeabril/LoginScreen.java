@@ -107,7 +107,7 @@ public class LoginScreen extends AppCompatActivity {
                         editor.apply();
 
                         loginButton.setEnabled(true);
-                        startActivity(new Intent(LoginScreen.this, AccountScreen.class));
+                        startActivity(new Intent(LoginScreen.this, SearchScreen.class));
                         finish();
                     }
                 },
