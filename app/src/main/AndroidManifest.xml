@@ -16,6 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ProductDetail2"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetail1"
+            android:exported="false" />
+        <activity
             android:name=".FavouriteViewHolder"
             android:exported="false" />
         <activity
@@ -27,7 +33,7 @@
         <activity
             android:name=".SearchScreen"
             android:exported="false"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop" />
         <activity
             android:name=".FavouritesScreen"
             android:exported="false" />
