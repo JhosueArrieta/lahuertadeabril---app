@@ -21,7 +21,7 @@
         android:id="@+id/searchView"
         android:layout_width="385dp"
         android:layout_height="30dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="20dp"
         android:background="@color/greenwater"
         app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:hint="Buscar..."
         android:singleLine="true"
-        android:paddingStart="8dp"/>
+        android:paddingStart="8dp" />
 
     <ScrollView
         android:layout_width="match_parent"
