@@ -22,10 +22,10 @@
             android:name=".ProductDetail1"
             android:exported="false" />
         <activity
-            android:name=".FavouriteViewHolder"
+            android:name=".Favourite1ViewHolder"
             android:exported="false" />
         <activity
-            android:name=".FavouriteItem"
+            android:name=".Favourite1Item"
             android:exported="false" />
         <activity
             android:name=".ChangePasswordScreen"
