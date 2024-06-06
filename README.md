@@ -13,7 +13,11 @@
    <img src="https://img.shields.io/badge/Año-2024-greenwater">
    <img src="https://img.shields.io/badge/Nombre-Jhosue%20Arrieta-red">
    <img src="https://img.shields.io/badge/Curso-DAM%202-cyan">
-   <img src="https://img.shields.io/badge/-Java-orange?logo=java&logoColor=white&logoWidth=30">
+   <img src="https://img.shields.io/badge/Java-17-orange">
+   <img src="https://img.shields.io/badge/Security-bcrypt-green">
+   <img src="https://img.shields.io/badge/Platform-Android-blue">
+   <img src="https://img.shields.io/badge/Database-SQLite-yellow">
+   <img src="https://img.shields.io/badge/Python-3.11-blue">
 </p>
 
 <h2 align="center"> 🔧Tecnologías utilizadas </h2>
@@ -21,6 +25,9 @@
 <ul>
     <li><strong><a href="https://www.java.com">Java</a></strong></li>
     <li><strong><a href="https://developer.android.com/studio">Android Studio</a></strong></li>
+    <li><strong><a href="https://www.python.org">Python</a></strong></li>
+    <li><strong><a href="https://www.djangoproject.com">Django</a></strong></li>
+    <li><strong><a href="https://restfulapi.net">API REST</a></strong></li>
     <li>
         <strong>Librerías utilizadas:</strong>
         <ul>
@@ -32,19 +39,36 @@
     </li>
 </ul>
 
-<h2 align="center"> 💻 Descripción de pantallas </h2>
+<h2 align="center"> 🚀Instalación </h2>
 
-<div style="display: flex; justify-content: space-around; align-items: center;">
-    <div style="text-align: center;">
-        <h3>Pantalla de búsqueda</h3>
-        <img src="https://github.com/JhosueArrieta/lahuertadeabril---app/assets/145338647/91b279a7-7f61-4922-93a1-1db5dbbf7a6a" alt="Pantalla de búsqueda">
-    </div>
-    <div style="text-align: center;">
-        <h3>Pantalla de ajustes</h3>
-        <img src="https://github.com/JhosueArrieta/lahuertadeabril---app/assets/145338647/e5c11262-1d88-48a7-a92b-c59546d90728" alt="Pantalla de ajustes">
-    </div>
-    <div style="text-align: center;">
-        <h3>Pantalla de productos destacados</h3>
-        <img src="https://github.com/JhosueArrieta/lahuertadeabril---app/assets/145338647/1ad82c66-833d-481c-ba08-e66204caecf4" alt="Pantalla de productos destacados">
-    </div>
-</div>
+<ul>
+    <li><strong>Java 8 o superior:</strong> Puedes descargar e instalar Java desde su <a href="https://www.java.com/en/download/">sitio web oficial</a>.</li>
+    <li><strong>Android Studio:</strong> La herramienta oficial para el desarrollo de aplicaciones Android. Descárgalo desde su <a href="https://developer.android.com/studio">sitio web oficial</a>.</li>
+    <li><strong>Python 3.0 o superior:</strong> Asegúrate de tener instalada una versión reciente de Python. Puedes descargarlo desde su <a href="https://www.python.org/downloads/">sitio web oficial</a>.</li>
+</ul>
+
+<h2 align="center"> 🖥️Instalación del proyecto (backend) </h2>
+
+<ul>
+    <li>Comsulta el siguiente repositorio para correr el servidor: <a href="https://github.com/JhosueArrieta/lahuertadeabril---backend">backend</a>.</li>
+</ul>
+
+<h2 align="center"> 📖Instalación del proyecto (frontend) </h2>
+
+<ul>
+    <li>Iniciar Android Studio</li>
+    <li>Importar el proyecto localizado en 'lahuertadeabril---app'</li>
+    <li>Ejecutar la app en un emulador o un dispositivo físico</li>
+</ul>
+
+<h2 align="center"> 📚Uso de la app</h2>
+
+<ul>
+    <li>Iniciar el servidor del backend</li>
+    <li>Abrir la app desde un emulador o dispositivo</li>
+    <li>Disfutar de las funcionalidades de la app</li>
+</ul>
+
+
+
+
